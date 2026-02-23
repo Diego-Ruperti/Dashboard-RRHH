@@ -2,6 +2,7 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 import plotly.express as px
+import os
 
 # Configuración de la página
 st.set_page_config(
@@ -31,7 +32,9 @@ st.markdown("""
 # --- CARGA Y LIMPIEZA DE DATOS ---
 @st.cache_data
 def get_clean_data():
-    df = pd.read_csv('employees.csv')
+    current_dir = os.path.dirname(os.path.abspath(__file__))
+    file_path = os.path.join(current_dir, 'employees.csv')
+    df = pd.read_csv(file_path)
     df['Department'] = df['Department'].str.strip().str.title()
     df['Position'] = df['Position'].str.strip().str.title()
     df['Salary'] = pd.to_numeric(df['Salary'], errors='coerce')
