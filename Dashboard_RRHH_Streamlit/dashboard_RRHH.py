@@ -28,10 +28,16 @@ st.markdown("""
     </style>
     """, unsafe_allow_html=True)
 
+import os
+
 # --- CARGA Y LIMPIEZA DE DATOS ---
 @st.cache_data
 def get_clean_data():
-    df = pd.read_csv('employees.csv')
+    # Obtener la ruta absoluta de este archivo para encontrar el CSV siempre
+    current_dir = os.path.dirname(os.path.abspath(__file__))
+    file_path = os.path.join(current_dir, 'employees.csv')
+    
+    df = pd.read_csv(file_path)
     df['Department'] = df['Department'].str.strip().str.title()
     df['Position'] = df['Position'].str.strip().str.title()
     df['Salary'] = pd.to_numeric(df['Salary'], errors='coerce')
@@ -271,3 +277,4 @@ with st.expander("🔍 Ver detalle de empleados filtrados"):
         st.dataframe(df_selection.sort_values(by="PerformanceScore", ascending=False), use_container_width=True)
     else:
         st.write("Ningún empleado coincide con esos parámetros.")
+
