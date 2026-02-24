@@ -83,8 +83,6 @@ Este repositorio puede ser utilizado como:
 ---
 ## 🌐 Conecta conmigo
 
-💼 LinkedIn: https://www.linkedin.com/in/diegoruperti/
-📂 GitHub: https://github.com/Diego-Ruperti
-✉️ Email: andrewrupert3@gmail.com
-
-El contenido de este repositorio se distribuye bajo la licencia que se indique en el archivo correspondiente.
+- 💼 LinkedIn: https://www.linkedin.com/in/diegoruperti/
+- 📂 GitHub: https://github.com/Diego-Ruperti
+- ✉️ Email: andrewrupert3@gmail.com
